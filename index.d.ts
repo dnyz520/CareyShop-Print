@@ -29,6 +29,8 @@ export default class PrintCs {
     constructor(options?: PrintCsOptions);
     /** Gets current Iframe reference */
     getIFrame(): HTMLIFrameElement;
+    /** Clear current Iframe document */
+    clearIFrameDocument(): void;
     /**
      * Print an HTMLElement
      *

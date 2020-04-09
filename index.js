@@ -47,6 +47,13 @@ var PrintCs = /** @class */ (function () {
     PrintCs.prototype.getIFrame = function () {
         return this.iframe;
     };
+    /** Clear current Iframe document */
+    PrintCs.prototype.clearIFrameDocument = function () {
+      const { contentWindow } = this.iframe;
+      contentWindow.document.open();
+      contentWindow.document.write('<html lang="zh"><head><title>CareyShop</title></head><body/></html>');
+      contentWindow.document.close();
+    };
     /**
      * Print an HTMLElement
      *
@@ -61,7 +68,6 @@ var PrintCs = /** @class */ (function () {
         var _a = this.iframe, contentDocument = _a.contentDocument, contentWindow = _a.contentWindow;
         if (!contentDocument || !contentWindow)
             return;
-        this.iframe.src = 'about:blank';
         this.elCopy = el.cloneNode(true);
         if (!this.elCopy)
             return;
@@ -69,7 +75,7 @@ var PrintCs = /** @class */ (function () {
         this.callback = callback;
         var doc = contentWindow.document;
         doc.open();
-        doc.write('<!DOCTYPE html><html lang="en"><head><title>CareyShop</title></head><body/></html>');
+        doc.write('<!DOCTYPE html><html lang="zh"><head><title>CareyShop</title></head><body/></html>');
         this.addEvents();
         // 1. append custom elements
         var _b = this.opts, headElements = _b.headElements, bodyElements = _b.bodyElements;
