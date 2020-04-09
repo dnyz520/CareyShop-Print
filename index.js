@@ -3,6 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var URL_LONG = /^(((http[s]?)|file):)?(\/\/)+([0-9a-zA-Z-_.=?&].+)$/;
 var URL_SHORT = /^((\.|\.\.)?\/)([0-9a-zA-Z-_.=?&]+\/)*([0-9a-zA-Z-_.=?&]+)$/;
 var isValidURL = function (str) { return URL_LONG.test(str) || URL_SHORT.test(str); };
+const DOCUMENT = '<!DOCTYPE html><html><head><title>CareyShop</title></head><body/></html>';
 function createStyle(doc, cssText) {
     var style = doc.createElement('style');
     style.type = 'text/css';
@@ -21,7 +22,6 @@ exports.createLinkStyle = createLinkStyle;
 function createIFrame(parent) {
     var el = window.document.createElement('iframe');
     var css = 'visibility:hidden;position:absolute;width:0;height:0;top:-10px;left:-10px;';
-    el.setAttribute('id', 'CareyShop_Print');
     el.setAttribute('style', css);
     el.setAttribute('width', '0');
     el.setAttribute('height', '0');
@@ -51,7 +51,7 @@ var PrintCs = /** @class */ (function () {
     PrintCs.prototype.clearIFrameDocument = function () {
       const { contentWindow } = this.iframe;
       contentWindow.document.open();
-      contentWindow.document.write('<html lang="zh"><head><title>CareyShop</title></head><body/></html>');
+      contentWindow.document.write(DOCUMENT);
       contentWindow.document.close();
     };
     /**
@@ -75,7 +75,7 @@ var PrintCs = /** @class */ (function () {
         this.callback = callback;
         var doc = contentWindow.document;
         doc.open();
-        doc.write('<!DOCTYPE html><html lang="zh"><head><title>CareyShop</title></head><body/></html>');
+        doc.write(DOCUMENT);
         this.addEvents();
         // 1. append custom elements
         var _b = this.opts, headElements = _b.headElements, bodyElements = _b.bodyElements;
