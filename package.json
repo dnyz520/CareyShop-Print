@@ -4,6 +4,7 @@
   "description": "Print HTML elements in modern browsers.",
   "main": "index.js",
   "typings": "index.d.ts",
+  "private": false,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "release": "npm version patch && npm publish --access=public"
