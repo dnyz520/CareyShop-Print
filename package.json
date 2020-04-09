@@ -1,0 +1,30 @@
+{
+  "name": "@careyshop/printcs",
+  "version": "1.0.1",
+  "description": "Print HTML elements in modern browsers.",
+  "main": "index.js",
+  "typings": "index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "release": "npm version patch && npm publish --access=public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dnyz520/CareyShop-PrintCs"
+  },
+  "keywords": [
+    "html",
+    "dom",
+    "print",
+    "elements",
+    "element printing"
+  ],
+  "author": "思维空间 <252404501@qq.com>",
+  "license": "AGPL-3.0",
+  "bugs": {
+    "url": "https://github.com/dnyz520/CareyShop-PrintCs/issues"
+  },
+  "homepage": "https://github.com/dnyz520/CareyShop-PrintCs#readme",
+  "deprecated": false,
+  "dependencies": {}
+}
