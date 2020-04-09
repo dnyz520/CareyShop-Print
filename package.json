@@ -1,6 +1,6 @@
 {
-  "name": "@careyshop/printcs",
-  "version": "1.0.2",
+  "name": "@careyshop/vue-print",
+  "version": "1.0.0",
   "description": "Print HTML elements in modern browsers.",
   "main": "index.js",
   "typings": "index.d.ts",
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/dnyz520/CareyShop-PrintCs"
+    "url": "https://github.com/dnyz520/CareyShop-Print"
   },
   "keywords": [
     "html",
@@ -23,9 +23,9 @@
   "author": "思维空间 <252404501@qq.com>",
   "license": "AGPL-3.0",
   "bugs": {
-    "url": "https://github.com/dnyz520/CareyShop-PrintCs/issues"
+    "url": "https://github.com/dnyz520/CareyShop-Print/issues"
   },
-  "homepage": "https://github.com/dnyz520/CareyShop-PrintCs#readme",
+  "homepage": "https://github.com/dnyz520/CareyShop-Print#readme",
   "deprecated": false,
   "dependencies": {}
 }
