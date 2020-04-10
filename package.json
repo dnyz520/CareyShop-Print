@@ -2,17 +2,16 @@
   "name": "@careyshop/vue-print",
   "version": "1.0.3",
   "description": "Print HTML elements in modern browsers.",
-  "main": "index.js",
-  "typings": "index.d.ts",
-  "private": false,
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "release": "npm version patch && npm publish --access=public"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/dnyz520/CareyShop-Print"
   },
+  "bugs": {
+    "url": "https://github.com/dnyz520/CareyShop-Print/issues"
+  },
+  "homepage": "https://github.com/dnyz520/CareyShop-Print#readme",
+  "license": "AGPL-3.0",
+  "author": "思维空间 <252404501@qq.com>",
   "keywords": [
     "html",
     "dom",
@@ -20,12 +19,34 @@
     "elements",
     "element printing"
   ],
-  "author": "思维空间 <252404501@qq.com>",
-  "license": "AGPL-3.0",
-  "bugs": {
-    "url": "https://github.com/dnyz520/CareyShop-Print/issues"
+  "engines": {
+    "node": ">= 4"
   },
-  "homepage": "https://github.com/dnyz520/CareyShop-Print#readme",
-  "deprecated": false,
-  "dependencies": {}
+  "main": "index.js",
+  "typings": "index.d.ts",
+  "private": false,
+  "files": [
+    "index.js",
+    "index.d.ts",
+    "/*.min.js",
+    "LICENSE",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "npm run compile",
+    "compile": "npm run compile:browser && npm run compile:cjs",
+    "compile:cjs": "tsc --module commonjs --target es5",
+    "compile:browser": "rollup -c",
+    "release": "npm version patch && npm publish --access=public"
+  },
+  "devDependencies": {
+    "@types/jasmine": "3.3.16",
+    "@types/node": "8.10.48",
+    "jasmine-core": "3.4.0",
+    "jasmine-spec-reporter": "4.2.1",
+    "rollup": "0.68.2",
+    "rollup-plugin-terser": "5.1.1",
+    "rollup-plugin-typescript2": "0.21.2",
+    "typescript": "2.9.2"
+  }
 }
