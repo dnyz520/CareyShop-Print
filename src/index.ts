@@ -1,7 +1,6 @@
 const URL_LONG = /^(((http[s]?)|file):)?(\/\/)+([0-9a-zA-Z-_.=?&].+)$/
 const URL_SHORT = /^((\.|\.\.)?\/)([0-9a-zA-Z-_.=?&]+\/)*([0-9a-zA-Z-_.=?&]+)$/
 const isValidURL = (str: string) => URL_LONG.test(str) || URL_SHORT.test(str)
-const DOCUMENT = '<!DOCTYPE html><html lang="zh"><head><title>CareyShop</title></head><body/></html>';
 
 export function createStyle (doc: Document, cssText: string) {
   const style: HTMLStyleElement = doc.createElement('style')
@@ -81,16 +80,6 @@ export default class PrintCS {
     return this.iframe
   }
 
-  /** Clear current Iframe document */
-  clearIFrameDocument () {
-    const { contentWindow } = this.iframe;
-    if (!contentWindow) return
-
-    contentWindow.document.open();
-    contentWindow.document.write(DOCUMENT);
-    contentWindow.document.close();
-  }
-
   /**
    * Print an HTMLElement
    *
@@ -116,7 +105,7 @@ export default class PrintCS {
     const doc = contentWindow.document
 
     doc.open()
-    doc.write(DOCUMENT)
+    doc.write('<!DOCTYPE html><html lang="zh"><head><title>CareyShop</title></head><body/></html>')
 
     this.addEvents()
 
