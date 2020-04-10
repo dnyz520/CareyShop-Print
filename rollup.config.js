@@ -1,3 +1,4 @@
+import { name } from "./package.json";
 import typescript from "rollup-plugin-typescript2";
 import { terser } from "rollup-plugin-terser";
 
@@ -5,7 +6,7 @@ export default {
   input: 'src/index.ts',
   name,
   output: {
-    file: `./printCS.umd.min.js`,
+    file: `./index.umd.min.js`,
     format: 'umd',
     sourcemap: false,
     exports: 'named'
