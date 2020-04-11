@@ -1,5 +1,5 @@
-# vue-careyshop-print
+# vue-stats
 
 ## externals
 
-careyshop-print
+stats
