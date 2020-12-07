@@ -1,6 +1,6 @@
 {
   "name": "@careyshop/vue-print",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "Print HTML elements in modern browsers.",
   "main": "dist/print.js",
   "private": false,
